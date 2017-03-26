@@ -14,20 +14,15 @@ class App extends Component {
     }
 
     login() {
-        let token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJmaXJlYmFzZS1hZG1pbnNkay1uZ215bEBsdnRuLWQxNzUzLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwic3ViIjoiZmlyZWJhc2UtYWRtaW5zZGstbmdteWxAbHZ0bi1kMTc1My5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHl0b29sa2l0Lmdvb2dsZWFwaXMuY29tL2dvb2dsZS5pZGVudGl0eS5pZGVudGl0eXRvb2xraXQudjEuSWRlbnRpdHlUb29sa2l0IiwiaWF0IjoxNDkwNDk5MDA5LCJleHAiOjE0OTA1MDI2MDksInVpZCI6IjI3In0.XsGmPu-XNWR5k7k0-0rmizZrBS-SyWgJ4HgHBgdpjN7f12wMXRTdrhmKmC_kVeoFB3ALf59yxyx9OrP3Nu7_PBPY0C2t8klDUnbrFKfSuJb7yCP4YQrR_wv9V5HL_lqqZqDFsEbFei_Wvcnl4ioC2TX9iwdOIzu9KLIc6k-uC2BTZdV18MJux7wy2FxbotKB95W9SKhEiKMjqIM90slr6porhZji9YO0KZiiJnjOD154C0GByxhoJkMDOoy8-CFNTBJGMXlK32Rl2SjWlmHpliyDHIvSQOvNBeX_AncRLdmzFNp59Wf2kT3qVYMxZe4QwyUQhS92MwvYuRgRT6KmEg";
+        let token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJmaXJlYmFzZS1hZG1pbnNkay1uZ215bEBsdnRuLWQxNzUzLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwic3ViIjoiZmlyZWJhc2UtYWRtaW5zZGstbmdteWxAbHZ0bi1kMTc1My5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHl0b29sa2l0Lmdvb2dsZWFwaXMuY29tL2dvb2dsZS5pZGVudGl0eS5pZGVudGl0eXRvb2xraXQudjEuSWRlbnRpdHlUb29sa2l0IiwiaWF0IjoxNDkwNTM1Njg2LCJleHAiOjE0OTA1MzkyODYsInVpZCI6IjI3In0.CnoIjyaM9Lnsqrwiw0-DMtxVC77jCsxEXX9VfPCw9VGGZ8z5Su8OZhLubGlKKPj0Uj17He5BVxQxutxETSCPaoolc5NNXrYbltr757k6u2-BWLo8-f2WbwOBPD_k_BV0aEEOeYUUvjQg-xsueVft22_5rYl5-_lMCN-7WJ7_RXxjUy9l7jDoMey96NVH8mtZvsnhvMKQMA4muGNPFL1MUwq1PvfmJ3j3N2aktGrx5tHNb1VzZUf-L0NecnStg-gl__MBwzpi1xatvPwl4-1c2yGqOJuw_1wcitYDYC1t-U0CFL57SPZx-O_6Bb_fALIHblAttjRoaSsObjGJ9Ym1NQ";
 
-        firebase.auth().signInWithCustomToken(token).catch(function (error) {
+        firebase.auth().signInWithCustomToken(token).then(success => {
+            this.setState({'isLoggedIn': true});
+            this.onConnect();
+            this.onDisconnect();
+        }, function (error) {
             // Handle Errors here.
             console.log(error);
-        });
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                this.setState({'isLoggedIn': true});
-                this.onConnect();
-                this.onDisconnect();
-            } else {
-                // No user is signed in.
-            }
         });
 
     }
@@ -51,7 +46,6 @@ class App extends Component {
 
         var connectedRef = firebase.database().ref(".info/connected");
         connectedRef.on("value", function (snap) {
-            console.log(snap.val());
         });
     }
 
