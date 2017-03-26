@@ -15,8 +15,9 @@ class MesgsList extends React.Component {
 
 
     componentWillMount() {
+        let channelId = 'channel1adsfasdfwerqwer'
         const rootRef = firebase.database().ref('messages');
-        const speedRef = rootRef.child('channel1adsfasdfwerqwer');
+        const speedRef = rootRef.child(channelId);
 
         speedRef.on('value', snap => {
             let messObj = snap.val();
@@ -26,9 +27,16 @@ class MesgsList extends React.Component {
             for (let i = 0; i < keys.length; i++) {
                 let isShowAvatar = this.isShowAvatar(messObj[keys[i]], messObj[keys[i + 1]]);
                 let isFromMe = this.isFromMe(messObj[keys[i]].from);
-
+                let isRead = messObj[keys[i]].isRead;
                 listItems.push(
-                    <MesgsItem key={keys[i]} messageId={keys[i]} messageData={messObj[keys[i]]} isShowAvatar={isShowAvatar} isFromMe={isFromMe}/>);
+                    <MesgsItem key={keys[i]}
+                               messageId={keys[i]}
+                               channelId={channelId}
+                               isRead={isRead}
+                               messageData={messObj[keys[i]]}
+                               isShowAvatar={isShowAvatar}
+                               isFromMe={isFromMe}
+                    />);
             }
             this.setState({'listItems': listItems});
         })
@@ -39,7 +47,7 @@ class MesgsList extends React.Component {
     }
 
     isShowAvatar(currentMess, nextMess) {
-        if (nextMess == undefined) {
+        if (nextMess === undefined) {
             //current Message is the last message
             return true;
         }

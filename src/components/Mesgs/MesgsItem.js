@@ -1,9 +1,26 @@
 import React from 'react';
 import moment from "moment";
+import * as firebase from 'firebase';
 
 class MesgsItem extends React.Component {
 
+    constructor() {
+        super();
 
+        this.markAsRead = this.markAsRead.bind(this);
+    }
+
+    markAsRead() {
+        const channelRef = firebase.database().ref('messages/' + this.props.channelId);
+        const childref = channelRef.child(this.props.messageId);
+        childref.update({'isRead': true});
+    }
+
+    componentDidMount() {
+        if (!this.props.isRead) {
+            setInterval(this.markAsRead(), 1000);
+        }
+    }
 
 
     render() {
