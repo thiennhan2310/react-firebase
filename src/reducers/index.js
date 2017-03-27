@@ -4,9 +4,10 @@
 import {combineReducers} from 'redux'
 import channels from './channels';
 import app from './app';
+import message from './message';
 
 const messageApp = combineReducers({
-    channels, app
+    channels, app, message
 })
 
 export default messageApp
