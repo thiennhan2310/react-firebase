@@ -31,8 +31,6 @@ class ChannelItem extends React.Component {
     }
 }
 const mapStateToProps = (state) => {
-    console.log(state); // state
-    console.log(arguments[1]); // undefined
     return state
 }
 

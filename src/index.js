@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
 import * as firebase from 'firebase';
 import messageApp from './reducers/index';
-
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 
 // Initialize Firebase
 const config = {
@@ -16,7 +16,7 @@ const config = {
 };
 firebase.initializeApp(config);
 
-let store = createStore(messageApp);
+let store = createStore(messageApp, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>
