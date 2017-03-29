@@ -1,15 +1,30 @@
 import React from 'react';
-
+import {hasClass , removeClass} from './../shared/actionClass';
 
 class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.backMegsList = this.backMegsList.bind(this);
+        // this.removeClass = this.removeClass.bind(this);
+        // this.hasClass = this.hasClass.bind(this);
+
+    }
+    backMegsList(){
+        var box_right = document.getElementById("primus-chat-system__box-right");
+        var header_back_mesgs = document.getElementById("header-primus-dashboard");
+        removeClass(box_right, "active");
+        removeClass(header_back_mesgs, "active-chat");
+
+    }
 
     render() {
         return (
-            <header className="header-primus-dashboard">
+            <header className="header-primus-dashboard" id="header-primus-dashboard">
                 <nav className="navbar hidden-xs">
                     <div className="container">
                         <div className="navbar-header">
-                            <a className="navbar-brand logo-pri__org" href="#"><img alt="img-header" src="./assets/img/logo-primus-gray.png"/></a>
+                            <a className="navbar-brand logo-pri__org" href="#"><img alt="img-header"
+                                                                                    src="./assets/img/logo-primus-gray.png"/></a>
                         </div>
                         <div>
                             <ul className="nav navbar-nav nav-link-page ">
@@ -18,6 +33,11 @@ class Header extends React.Component {
                                 <li><a href="#">My Profile</a></li>
                             </ul>
                             <ul className="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="#">
+                                        <img src="./assets/img/ico-message-header.png" width="25" />
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="#">
                                         VN
@@ -54,8 +74,13 @@ class Header extends React.Component {
                                 <span className="icon-bar icon-bar2"></span>
                                 <span className="icon-bar icon-bar3"></span>
                             </button>
-                            <a className="navbar-brand logo-pri__org" href="#"><img alt="img-logo-gray" src="./assets/img/logo-primus-gray.png"/></a>
-                            <a className="navbar-brand logo-pri__white" href="#"><img alt="img-logo-white" src="./assets/img/logo-primus-white.png"/></a>
+                            <a className="navbar-brand logo-pri__org" href="#"><img alt="img-logo-gray"
+                                                                                    src="./assets/img/logo-primus-gray.png"/></a>
+                            <h5 className="back-channel-list" onClick={() => this.backMegsList()}>
+                                <i className="fa fa-angle-left" aria-hidden="true"></i> Messages
+                            </h5>
+                            <a className="navbar-brand logo-pri__white" href="#"><img alt="img-logo-white"
+                                                                                      src="./assets/img/logo-primus-white.png"/></a>
                         </div>
 
                         <div className="collapse navbar-collapse" id="myNavbar">
@@ -64,6 +89,11 @@ class Header extends React.Component {
                                 <li className="active"><a href="#">My Profile</a></li>
                             </ul>
                             <ul className="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="#">
+                                        <img src="./assets/img/ico-message-header.png" width="25" />
+                                    </a>
+                                </li>
                                 <li>
                                     <a href="#">
                                         VN

@@ -4,8 +4,8 @@ import App from './containers/App';
 import {Provider} from 'react-redux';
 import * as firebase from 'firebase';
 import messageApp from './reducers/index';
-import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
+import {createStore, applyMiddleware} from 'redux';
 
 // Initialize Firebase
 const config = {

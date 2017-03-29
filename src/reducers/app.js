@@ -1,4 +1,7 @@
 /**
+ * Created by ITTEAM on 3/28/2017.
+ */
+/**
  * Created by ThienNhan on 3/27/2017.
  */
 const app = (state = [], action) => {

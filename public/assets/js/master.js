@@ -1,22 +1,23 @@
-(function () {
+
+(function() {
     // Variables
     var btn_collapse_nav = ".navbar-header .navbar-toggle";
     var overflowAttr = "";
     var heightAttr = "";
-    var fncLeavingAlert = function (isActive) {
-        if (isActive) {
+    var fncLeavingAlert = function(isActive){
+        if(isActive){
             console.log("abc");
-            window.onbeforeunload = function () {
-                return 'Are you sure you want to leave?';
+            window.onbeforeunload = function(){
+              return 'Are you sure you want to leave?';
             };
-            $(window).bind('beforeunload', function () {
-                return 'Are you sure you want to leave?';
+            $(window).bind('beforeunload', function(){
+              return 'Are you sure you want to leave?';
             });
         }
     };
-
+      
     // Resize page
-    $(window).resize(function () {
+    $(window).resize(function() {
         var width = $(this).width();
         if (width > 767) {
             if ($(".navbar").hasClass('animation-nav-mb')) {
@@ -35,7 +36,7 @@
     });
 
     // Click to scroll to section 
-    $('.navbar ul li a[href^="#"]').on('click', function (event) {
+    $('.navbar ul li a[href^="#"]').on('click', function(event) {
         var windowW = $(window).width();
         var target = $($(this).attr('href'));
         // $(".navbar ul li ").removeClass("active");
@@ -52,7 +53,7 @@
     });
 
     // Click open navigation bar animation
-    $(btn_collapse_nav).click(function () {
+    $(btn_collapse_nav).click(function() {
         var windowH = $(window).height();
         $(".header-primus .hero-section").height(windowH);
         $(".navbar").toggleClass("animation-nav-mb");
@@ -80,13 +81,13 @@
                 }
             });
         },
-    }
+    }  
     $(document).ready(function () {
         $('#locale').click(function () {
             fontOffice.changeLang();
         });
     });
-
+    
 }());
 
 

@@ -1,6 +1,7 @@
+
 @font-face {
-    font-family: 'VN_BrandonGrotesque-Bold';
-    src: url('VN_BrandonGrotesque-Bold.eot?#iefix') format('embedded-opentype'), url('VN_BrandonGrotesque-Bold.woff') format('woff'), url('VN_BrandonGrotesque-Bold.ttf') format('truetype'), url('VN_BrandonGrotesque-Bold.svg#VN_BrandonGrotesque-Bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'VN_BrandonGrotesque-Bold';
+  src: url('VN_BrandonGrotesque-Bold.eot?#iefix') format('embedded-opentype'),  url('VN_BrandonGrotesque-Bold.woff') format('woff'), url('VN_BrandonGrotesque-Bold.ttf')  format('truetype'), url('VN_BrandonGrotesque-Bold.svg#VN_BrandonGrotesque-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }

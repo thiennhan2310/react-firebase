@@ -1,7 +1,8 @@
+
 @font-face {
-    font-family: 'BrandonText-Black';
-    src: url('BrandonText-Black.eot?#iefix') format('embedded-opentype'), url('BrandonText-Black.otf') format('opentype'),
-    url('BrandonText-Black.woff') format('woff'), url('BrandonText-Black.ttf') format('truetype'), url('BrandonText-Black.svg#BrandonText-Black') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'BrandonText-Black';
+  src: url('BrandonText-Black.eot?#iefix') format('embedded-opentype'),  url('BrandonText-Black.otf')  format('opentype'),
+	     url('BrandonText-Black.woff') format('woff'), url('BrandonText-Black.ttf')  format('truetype'), url('BrandonText-Black.svg#BrandonText-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }

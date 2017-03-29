@@ -1,7 +1,8 @@
+
 @font-face {
-    font-family: 'BrandonText-ThinItalic';
-    src: url('BrandonText-ThinItalic.eot?#iefix') format('embedded-opentype'), url('BrandonText-ThinItalic.otf') format('opentype'),
-    url('BrandonText-ThinItalic.woff') format('woff'), url('BrandonText-ThinItalic.ttf') format('truetype'), url('BrandonText-ThinItalic.svg#BrandonText-ThinItalic') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'BrandonText-ThinItalic';
+  src: url('BrandonText-ThinItalic.eot?#iefix') format('embedded-opentype'),  url('BrandonText-ThinItalic.otf')  format('opentype'),
+	     url('BrandonText-ThinItalic.woff') format('woff'), url('BrandonText-ThinItalic.ttf')  format('truetype'), url('BrandonText-ThinItalic.svg#BrandonText-ThinItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }

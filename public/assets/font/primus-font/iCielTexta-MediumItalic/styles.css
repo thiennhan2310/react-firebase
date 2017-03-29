@@ -1,6 +1,7 @@
+
 @font-face {
-    font-family: 'iCielTexta-MediumItalic';
-    src: url('iCielTexta-MediumItalic.eot?#iefix') format('embedded-opentype'), url('iCielTexta-MediumItalic.woff') format('woff'), url('iCielTexta-MediumItalic.ttf') format('truetype'), url('iCielTexta-MediumItalic.svg#iCielTexta-MediumItalic') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'iCielTexta-MediumItalic';
+  src: url('iCielTexta-MediumItalic.eot?#iefix') format('embedded-opentype'),  url('iCielTexta-MediumItalic.woff') format('woff'), url('iCielTexta-MediumItalic.ttf')  format('truetype'), url('iCielTexta-MediumItalic.svg#iCielTexta-MediumItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }

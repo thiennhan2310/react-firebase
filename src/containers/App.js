@@ -14,6 +14,7 @@ class App extends Component {
         }
     }
 
+
     login(token) {
         firebase.auth().signInWithCustomToken(token).then(success => {
             this.setState({'isLoggedIn': true});
@@ -48,20 +49,21 @@ class App extends Component {
         });
     }
 
-    componentWillMount() {
-        this.props.dispatch(getToken(27));
-    }
-
     componentWillReceiveProps(nextProps) {
         if (this.state.isLoggedIn) {
             return false;
         }
 
         let token = nextProps.token;
-
         this.logout();
         this.login(token);
         return true;
+    }
+
+    componentWillMount() {
+        //call action getToken with userId = 27
+        let uid = window.location.hash.replace('#', '');
+        this.props.dispatch(getToken(uid));
     }
 
     render() {
@@ -86,6 +88,4 @@ class App extends Component {
 function mapStateToProps(state) {
     return state.app
 }
-
-
 export default connect(mapStateToProps)(App)

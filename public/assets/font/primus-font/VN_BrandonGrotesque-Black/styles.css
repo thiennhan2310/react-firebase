@@ -1,6 +1,7 @@
+
 @font-face {
-    font-family: 'VN_BrandonGrotesque-Black';
-    src: url('VN_BrandonGrotesque-Black.eot?#iefix') format('embedded-opentype'), url('VN_BrandonGrotesque-Black.woff') format('woff'), url('VN_BrandonGrotesque-Black.ttf') format('truetype'), url('VN_BrandonGrotesque-Black.svg#VN_BrandonGrotesque-Black') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'VN_BrandonGrotesque-Black';
+  src: url('VN_BrandonGrotesque-Black.eot?#iefix') format('embedded-opentype'),  url('VN_BrandonGrotesque-Black.woff') format('woff'), url('VN_BrandonGrotesque-Black.ttf')  format('truetype'), url('VN_BrandonGrotesque-Black.svg#VN_BrandonGrotesque-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }

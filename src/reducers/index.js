@@ -3,11 +3,12 @@
  */
 import {combineReducers} from 'redux'
 import channels from './channels';
+import users from './users'
 import app from './app';
-import message from './message';
-
 const messageApp = combineReducers({
-    channels, app, message
+    app,
+    channels,
+    users
 })
 
 export default messageApp

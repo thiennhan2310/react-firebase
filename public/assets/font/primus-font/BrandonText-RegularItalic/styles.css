@@ -1,6 +1,7 @@
+
 @font-face {
-    font-family: 'BrandonText-RegularItalic';
-    src: url('BrandonText-RegularItalic.eot?#iefix') format('embedded-opentype'), url('BrandonText-RegularItalic.woff') format('woff'), url('BrandonText-RegularItalic.ttf') format('truetype'), url('BrandonText-RegularItalic.svg#BrandonText-RegularItalic') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'BrandonText-RegularItalic';
+  src: url('BrandonText-RegularItalic.eot?#iefix') format('embedded-opentype'),  url('BrandonText-RegularItalic.woff') format('woff'), url('BrandonText-RegularItalic.ttf')  format('truetype'), url('BrandonText-RegularItalic.svg#BrandonText-RegularItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
