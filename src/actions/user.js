@@ -27,10 +27,11 @@ export const setCurrentUser = (userId, userInfo) => {
   }
 }
 
-export const setReceiverId = (userId) => {
+export const setReceiverInfo = (receiverId, receiverInfo) => {
     return {
-        type: 'SET_RECEIVER_USER',
-        receiverId: userId
+        type: SET_RECEIVER_USER,
+        receiverId: receiverId,
+        receiverInfo: receiverInfo
     }
 }
 

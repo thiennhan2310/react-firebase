@@ -8,8 +8,7 @@ class MessageHeader extends React.Component {
 
 }
 const mapStateToProps = (state) => {
-    let receiverInfo = state.users.userList[state.users.receiverId];
-    return {receiverInfo : receiverInfo }
+    return {receiverInfo: state.users.receiverInfo}
 }
 
 export default connect(mapStateToProps)(MessageHeaderUI);

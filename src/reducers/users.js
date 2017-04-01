@@ -1,8 +1,9 @@
-import {SET_USER_INFO, SET_CURRENT_USER} from '../actions/user';
+import {SET_USER_INFO, SET_CURRENT_USER, SET_RECEIVER_USER} from '../actions/user';
 
 
 const initialiState = {
-    'userList': {}
+    'userList': {},
+    'receiverInfo': {}
 };
 
 const users = (state = initialiState, action) => {
@@ -12,7 +13,10 @@ const users = (state = initialiState, action) => {
         case SET_CURRENT_USER:
             let userInfo = action.userInfo;
             return {...state, ['userList'] : {...state.userList ,[action.userId]: userInfo }  };
-
+        case SET_RECEIVER_USER :
+            return Object.assign({}, state, {
+                'receiverInfo': {'userId': action.receiverId, ...action.receiverInfo}
+            })
         default:
             return Object.assign({}, state)
     }
