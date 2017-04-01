@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import BoxChannels from './BoxChannels';
-import BoxMesgs from './BoxMesgs';
+import BoxMesgs from './BoxMessage';
 // import {connect} from 'react-redux'
 
 class ChatSystem extends Component {

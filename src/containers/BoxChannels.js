@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import ChannelList from  '../components/Channel/ChannelList';
-import ChannelHeader from '../components/Channel/ChannelHeader'
+import ChannelList from  '../components/channel/ChannelList';
+import ChannelHeader from '../components/channel/ChannelHeader'
 
 class BoxChannels extends Component {
     render() {

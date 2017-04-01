@@ -1,22 +1,19 @@
 import React, {Component} from 'react';
-import MesgsHeader from '../containers/Message/MessageHeader'
-import MesgsBoxSend from '../components/Message/MessagesBoxSendUI'
-import MesgsList from '../components/Message/MessageListUI'
+import MessageHeader from './Message/MessageHeader'
+import MessagesBoxSend from './Message/MessagesBoxSend'
+import MessageList from './Message/MessageList'
 import {connect} from 'react-redux'
-import * as firebase from 'firebase';
 
-class BoxMesgs extends Component {
-
-
+class BoxMessage extends Component {
 
     render() {
         if (this.props.channels.selectedChannelId !== '') {
             return (
                 <div className="primus-chat-system__box-right primus-chat-system__box-mesgs"
                      id="primus-chat-system__box-right">
-                    <MesgsHeader />
-                    <MesgsList/>
-                    <MesgsBoxSend/>
+                    <MessageHeader />
+                    <MessageList/>
+                    <MessagesBoxSend/>
                 </div>
             )
         } else {
@@ -30,8 +27,7 @@ class BoxMesgs extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    return {channels: state.channels, users: state.users}
+    return {channels: state.channels}
 }
 
-export default connect(mapStateToProps)(BoxMesgs);
-// export default BoxMesgs;
+export default connect(mapStateToProps)(BoxMessage);

@@ -4,14 +4,25 @@
 /**
  * Created by ThienNhan on 3/27/2017.
  */
-const app = (state = [], action) => {
+import {SET_TOKEN, SET_CURRENT_USER} from '../actions/app';
+
+const initialiState = {
+    'token': '',
+};
+const app = (state = initialiState, action) => {
     switch (action.type) {
-        case 'SET_TOKEN':
+        case SET_TOKEN:
             return Object.assign({}, state, {
                 token: action.token
             });
+        case SET_CURRENT_USER:
+            return {
+              ...state,
+              isLoggedIn: true,
+              currentUserId: action.userId
+            }
         default:
-            return Object.assign({}, state)
+            return state;
     }
 
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import {hasClass , removeClass} from './../shared/actionClass';
+import  NotificationMessage from './NotificationMessage'
 
 class Header extends React.Component {
     constructor(props) {
@@ -35,7 +36,7 @@ class Header extends React.Component {
                             <ul className="nav navbar-nav navbar-right">
                                 <li>
                                     <a href="#">
-                                        <img src="./assets/img/ico-message-header.png" width="25" />
+                                        <NotificationMessage />
                                     </a>
                                 </li>
                                 <li>
@@ -91,7 +92,7 @@ class Header extends React.Component {
                             <ul className="nav navbar-nav navbar-right">
                                 <li>
                                     <a href="#">
-                                        <img src="./assets/img/ico-message-header.png" width="25" />
+                                        1
                                     </a>
                                 </li>
                                 <li>

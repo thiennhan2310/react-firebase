@@ -5,10 +5,13 @@ import {combineReducers} from 'redux'
 import channels from './channels';
 import users from './users'
 import app from './app';
+import notificationMessage from './notificationMessage';
+
 const messageApp = combineReducers({
     app,
     channels,
-    users
+    users,
+    notificationMessage,
 })
 
 export default messageApp

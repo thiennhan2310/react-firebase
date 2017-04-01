@@ -1,15 +1,20 @@
 import * as firebase from 'firebase'
+import {queryUsers} from './user.js';
 
-const setListChannel = (listChannelArr) => {
-    return {
-        type: 'SET_LIST_CHANNEL',
-        listChannel: listChannelArr
-    }
-}
+export const SELECT_CHANNEL = 'SELECT_CHANNEL';
+export const SET_CHANNEL_INFO = 'SET_CHANNEL_INFO';
+export const SET_LIST_CHANNEL = 'SET_LIST_CHANNEL';
+
+// const setListChannel = (listChannelArr) => {
+//     return {
+//         type: 'SET_LIST_CHANNEL',
+//         listChannel: listChannelArr
+//     }
+// }
 
 const setChannelInfo = (channelInfo) => {
     return {
-        type: 'SET_CHANNEL_INFO',
+        type: SET_CHANNEL_INFO,
         // channelId: channelId,
         channelInfo: channelInfo
     }
@@ -17,7 +22,7 @@ const setChannelInfo = (channelInfo) => {
 
 export const selectChannel = (channelId) => {
     return {
-        type: 'SELECT_CHANNEL',
+        type: SELECT_CHANNEL,
         selectedChannelId: channelId,
     }
 }
@@ -25,31 +30,32 @@ export const selectChannel = (channelId) => {
 
 export function getListChannelBy(userId) {
     // first parameter allway is dispatch for call another function
-    // console.log("uid: " + userId);
+     console.log("uid: " + userId);
     return (dispatch) => {
-        const rootRef = firebase.database().ref('users');
-        const childRef = rootRef.child(userId);
-        childRef.on('value', snap => {
-            var userInfo = snap.val();
-            var listChannel = userInfo.channels;
-            let listChannelArr= Object.keys(listChannel);
+        const rootRef = firebase.database().ref('users/' + userId);
+        // childRef.on('value', snap => {
+        //     var userInfo = snap.val();
+        //     var listChannel = userInfo.channels;
+            //let listChannelArr= Object.keys(listChannel);
             // dispatch(setListChannel(listChannelArr))
 
                 //let channelId = listChannelArr[i];
                 const channelRef = firebase.database().ref('channels').orderByChild("user/"+userId).equalTo(true);
                 channelRef.on('value', snap => {
                     let channelInfo = snap.val()
+                     //console.log(channelInfo);
 
-                     let recieverIds = Object.keys(channelInfo).map(key => {
+                     let receiverIds = Object.keys(channelInfo).map(key => {
                          return Object.keys(channelInfo[key].user).filter(uid => {
-                            return uid != userId;
+                            return uid !== userId;
                         });
                     })
-                    recieverIds = flatten(recieverIds);
-                    dispatch(setChannelInfo(snap.val()))
+                    receiverIds = flatten(receiverIds);
+                    dispatch(setChannelInfo(snap.val()));
+                    dispatch(queryUsers(receiverIds))
                 });
 
-        });
+        // });
     }
 }
 
