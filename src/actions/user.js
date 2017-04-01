@@ -10,6 +10,7 @@ let defaultUser = {
 
 export const SET_USER_INFO = 'SET_USER_INFO';
 export const SET_CURRENT_USER= 'SET_CURRENT_USER';
+export const SET_RECEIVER_USER= 'SET_RECEIVER_USER';
 export const setUserInfo = (userId, userInfo) => {
     return {
         type: SET_USER_INFO,
@@ -24,6 +25,13 @@ export const setCurrentUser = (userId, userInfo) => {
       userInfo: userInfo,
       userId: userId
   }
+}
+
+export const setReceiverId = (userId) => {
+    return {
+        type: 'SET_RECEIVER_USER',
+        receiverId: userId
+    }
 }
 
 export function getCurrentUser(userId) {
