@@ -4,6 +4,7 @@ import MessagesBoxSend from './Message/MessagesBoxSend'
 import MessageList from './Message/MessageList'
 import {connect} from 'react-redux'
 import {setReceiverInfo} from '../actions/user'
+import {getMessages} from "../actions/messages";
 class BoxMessage extends Component {
 
     componentWillReceiveProps(nextProps) {
@@ -17,6 +18,11 @@ class BoxMessage extends Component {
             let receiverInfo = nextProps.users.userList[receiverId];
             if (receiverInfo !== undefined) {
                 this.props.dispatch(setReceiverInfo(receiverId, receiverInfo))
+
+            }
+
+            if (selectedChannelId !== '' && this.props.channels.selectedChannelId !== selectedChannelId) {
+                this.props.dispatch(getMessages(selectedChannelId));
             }
         }
     }
