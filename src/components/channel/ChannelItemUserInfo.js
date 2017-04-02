@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import ChannelItemUserInfoUI from '../components/Channel/ChannelItemUserInfoUI';
+import ChannelItemUserInfoUI from './ChannelItemUserInfoUI';
 
 
 function mapStateToProps(state, ownProps) {
