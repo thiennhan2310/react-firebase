@@ -31,6 +31,7 @@ class MessageListUI extends React.Component {
                 listMessage.push(
                     <MesgsItem key={keys[i]}
                                messageData={messObj[keys[i]]}
+                               messageId = {keys[i]}
                                isShowAvatar={isShowAvatar}
                                isFromMe={isFromMe}
                     />);
