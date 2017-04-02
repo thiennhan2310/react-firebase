@@ -53,7 +53,7 @@ class MesgsBoxSend extends React.Component {
             }
 
             firebase.database().ref('messages/' + channelId).push({
-                createdAt: new Date().toISOString(),
+                createdAt: firebase.database.ServerValue.TIMESTAMP,
                 from: this.state.userId,
                 isRead: false,
                 message: message
@@ -62,7 +62,7 @@ class MesgsBoxSend extends React.Component {
             firebase.database().ref('channels/' + channelId).update({
                 lastMessage: message,
                 lastMessageFrom: this.state.userId,
-                lastMessageTime: new Date().toISOString(),
+                lastMessageTime: firebase.database.ServerValue.TIMESTAMP,
             });
 
             this.setState({'newMessage': ''});
