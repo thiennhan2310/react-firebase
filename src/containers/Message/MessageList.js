@@ -1,8 +1,5 @@
 import React from 'react';
-import MesgsItem from './MessagItem'
-import * as firebase from 'firebase';
 import {connect} from 'react-redux'
-import {getMessages} from '../../actions/messages'
 import MessageListUI from "../../components/message/MessageListUI";
 
 class MessageList extends React.Component {

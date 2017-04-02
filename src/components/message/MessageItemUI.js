@@ -3,7 +3,7 @@ import moment from "moment";
 import * as firebase from 'firebase';
 import FirebaseAvatar from '../../containers/FirebaseAvatar'
 
-class MessagItem extends React.Component {
+class MessageItem extends React.Component {
 
     constructor() {
         super();
@@ -44,4 +44,4 @@ class MessagItem extends React.Component {
 
 }
 
-export default MessagItem;
+export default MessageItem;

@@ -1,5 +1,5 @@
 import React from 'react';
-import MesgsItem from './MessagItemUI'
+import MessageItemUI from './MessageItemUI'
 
 class MessageListUI extends React.Component {
 
@@ -29,7 +29,7 @@ class MessageListUI extends React.Component {
                 let isShowAvatar = this.isShowAvatar(messObj[keys[i]], messObj[keys[i + 1]]);
                 let isFromMe = this.isFromMe(messObj[keys[i]].from);
                 listMessage.push(
-                    <MesgsItem key={keys[i]}
+                    <MessageItemUI key={keys[i]}
                                messageData={messObj[keys[i]]}
                                messageId = {keys[i]}
                                isShowAvatar={isShowAvatar}
